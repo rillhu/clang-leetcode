@@ -128,20 +128,16 @@ struct ListNode *addTwoNumbers(struct ListNode *l1, struct ListNode *l2) {
     p2 = l2;
     int flag = 0;
     while (p1 != NULL || p2 != NULL || flag == 1) {
-        struct ListNode *p = (struct ListNode *) calloc(1, sizeof(struct ListNode));
-        if (p1 != NULL) {
-            p->val += p1->val;
-        }
-        if (p2 != NULL) {
-            p->val += p2->val;
-        }
-        p->val += flag;
 
-        flag = 0;
-        if (p->val >= 10) {
-            p->val -= 10;
-            flag = 1;
-        }
+        int v1 = (p1 != NULL) ? p1->val : 0;
+        int v2 = (p2 != NULL) ? p2->val : 0;
+        int sum = v1 + v2 + flag;
+
+        flag = sum / 10;
+
+        struct ListNode *p = (struct ListNode *) calloc(1, sizeof(struct ListNode));
+        p->val = sum % 10;
+
         p->next = NULL;
         tail->next = p;
         tail = p;
