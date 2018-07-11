@@ -71,6 +71,7 @@ char *getNumFromList(struct ListNode *l, int *size) {
     return str;
 }
 
+/*method0: with head node*/
 //struct ListNode *addTwoNumbers(struct ListNode *l1, struct ListNode *l2) {
 //    struct ListNode *head, *tail;
 //    head = (struct ListNode *) calloc(1, sizeof(struct ListNode));
@@ -115,7 +116,7 @@ char *getNumFromList(struct ListNode *l, int *size) {
 //
 //}
 
-/*solution for leetcode: donot have head node*/
+/*method1: without head node. The solution is for leetcode: donot have head node*/
 struct ListNode *addTwoNumbers(struct ListNode *l1, struct ListNode *l2) {
     struct ListNode *head, *tail;
     head = (struct ListNode *) calloc(1, sizeof(struct ListNode));
