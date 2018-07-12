@@ -49,16 +49,23 @@ int lengthOfLongestSubstring(char *s) {
 
     while (i < n && j < n) {
 
-        if (subStrMap[s[j]] == -1) {    //New element, use the element itself as the subStrMap's key.
+        if (subStrMap[s[j]] == -1) {    //If get new element(use the element itself as the subStrMap's key,
+                                        //if the value is -1, it stands for a new element.)
                                         //This is a simple HASH map, which makes the search fast.
             subStrMap[s[j]] = j + i;    //Assign HASH value to the map. To make the HASH value is unequal, let it plus i,
                                         //And we can see either i or j is updated every time, so the sum is unequal.
             ans = (ans > j - i + 1) ? ans : j - i + 1;
             j++;
-        } else {
-            subStrMap[s[i]] = -1;
+        } else {                        //If get duplicated element, delete the value of the key
+            subStrMap[s[i]] = -1;       //Note the key is s[i]
             i++;
         }
+
+        /*Above method actually implement a slide window by using HASH map and two index: i and j.
+         * In the window[i,j), it stores the current max length sub-string for the specific i.
+         * If the key(s[j]) gets a new element, create a new key:value.
+         * If the key(s[j) gets a duplicated element, delete the value of the key: s[i],
+         * and then moves i forward.*/
 
     }
     return ans;
