@@ -44,7 +44,7 @@ int lengthOfLongestSubstring(char *s) {
     int i = 0, j = 0;
     int n = strlen(s);
 
-    char subStrMap[128];
+    char subStrMap[128];            //char might not be 100% correct, may be int is perfect
     memset(subStrMap, -1, 128);
 
     while (i < n && j < n) {
