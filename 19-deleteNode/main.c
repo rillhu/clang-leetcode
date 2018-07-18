@@ -81,21 +81,20 @@ struct ListNode *removeNthFromEnd(struct ListNode *head, int n) {
     currN = head;
 
     int len = 0;
-    while (currN->next) {
-        if (len < n) {
-            len++;
-        } else {
-            curr = curr->next;
-        }
+    for (int i = 0; i < n; ++i) { //find the 1st node which n ahead the list head
         currN = currN->next;
     }
 
-    if (len < n) {
-        head = head->next; //n is the 1st node of the list
-    } else {
-        struct ListNode *tmp = curr->next;
-        curr->next = tmp->next;
+    if (!currN) return head->next; //if n points the 1st node of the list
+
+    while (currN->next) {   //loop until currN point to last node
+        curr = curr->next;
+        currN = currN->next;
     }
+
+    struct ListNode *tmp = curr->next;  //delete curr->next node
+    curr->next = tmp->next;
+
     return head;
 }
 
