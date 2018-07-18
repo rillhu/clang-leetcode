@@ -25,7 +25,7 @@ int maxArea(int *height, int heightSize) {
 //        if (max < tmp)max = tmp;
 
         max = (max > ((height[l] < height[r] ? height[l] : height[r]) * (r - l)) ? max: ((height[l] < height[r] ? height[l] : height[r]) * (r - l)));
-        
+
         if (height[l] < height[r]) {
             l++;
         } else {
