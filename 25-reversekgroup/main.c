@@ -82,7 +82,7 @@ struct ListNode *reverseKGroup(struct ListNode *head, int k) {
 
         /*Post-update the ppp and pp pointers*/
         if (lpOut == 0) {
-            ppp = pp;
+            //ppp = pp;
             ppp->next = p1;
             pp = p1;
         } else {
@@ -109,7 +109,7 @@ int main() {
     ListNodeT *l1 = createList(list1, sizeof(list1) / sizeof(int));
     //printList(l1);
 
-    struct ListNode *exKList = reverseKGroup(l1, 6);
+    struct ListNode *exKList = reverseKGroup(l1, 3);
     printList(exKList);
 
     return 0;
