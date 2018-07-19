@@ -33,7 +33,7 @@ bool isValid(char *s) {
 
     bool flag = true;
     struct Stack stL;
-    stInitial(&stL, len / 2);
+    stInitial(&stL, len);
 
     while (*s) {
         switch (*s) {
