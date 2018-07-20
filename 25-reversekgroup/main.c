@@ -61,7 +61,6 @@ struct ListNode *reverseKGroup(struct ListNode *head, int k) {
         if (cnt < k) return head;   //This will not cause problem
                                     // since the k is less or equal the list length
 
-
         /*Reverse the sub-list with len == k*/
         struct ListNode *p1, *p2, *p3;
         p1 = p2 = p3 = pp;
