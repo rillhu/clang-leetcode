@@ -1,6 +1,10 @@
 #include <stdio.h>
 
+int divide(int dividend, int divisor) {
+
+}
+
 int main() {
-    printf("Hello, World!\n");
+
     return 0;
 }
