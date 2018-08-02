@@ -71,19 +71,8 @@ struct Interval *merge(struct Interval *intervals, int intervalsSize, int *retur
 
                 intervals[j].start = -1;
                 intervals[j].end = 0;
-            } else if ((res[resId].end >= intervals[j].start && res[resId].end >= intervals[j].end &&
-                        res[resId].start >= intervals[j].start)) {//overlap type 1: [2,6], [1,3]
-                res[resId].start = intervals[j].start;
-                intervals[j].start = -1;
-                intervals[j].end = 0;
-            } else if (res[resId].end >= intervals[j].start && res[resId].end >= intervals[j].end &&
+            }  else if (res[resId].end >= intervals[j].start && res[resId].end >= intervals[j].end &&
                        res[resId].start <= intervals[j].start) { //overlap type 2: [1,7], [2,6]
-                intervals[j].start = -1;
-                intervals[j].end = 0;
-            } else if (res[resId].end >= intervals[j].start && res[resId].end <= intervals[j].end &&
-                       res[resId].start >= intervals[j].start) { //overlap type 2: [2,6], [1, 7]
-                res[resId].start = intervals[j].start;
-                res[resId].end = intervals[j].end;
                 intervals[j].start = -1;
                 intervals[j].end = 0;
             }
@@ -166,12 +155,12 @@ struct Interval *merge(struct Interval *intervals, int intervalsSize, int *retur
 
 
 int main() {
-//    struct Interval arr[] = {
-//            {1,  3},
-//            {2,  6},
-//            {8,  10},
-//            {15, 18}
-//    };
+    struct Interval arr[] = {
+            {1,  3},
+            {2,  6},
+            {8,  10},
+            {15, 18}
+    };
 //    struct Interval arr[] = {
 //            {1, 4},
 //            {4, 5}
