@@ -14,18 +14,18 @@
  * Note: The returned array must be malloced, assume caller calls free().
  */
 
-struct Interval {
-    int start;
-    int end;
-};
+// struct Interval {
+//     int start;
+//     int end;
+// };
 
-int min(int v1, int v2) {
-    return (v1 < v2) ? v1 : v2;
-}
+// int min(int v1, int v2) {
+//     return (v1 < v2) ? v1 : v2;
+// }
 
-int max(int v1, int v2) {
-    return (v1 > v2) ? v1 : v2;
-}
+// int max(int v1, int v2) {
+//     return (v1 > v2) ? v1 : v2;
+// }
 
 struct Interval *merge(struct Interval *intervals, int intervalsSize, int *returnSize) {
     //printf("size: %d\n", intervalsSize);
