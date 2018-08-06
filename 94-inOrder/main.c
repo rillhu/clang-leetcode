@@ -19,10 +19,22 @@ struct TreeNode *createBiTree(char *e, int *i) {
     if (e[(*i)++] != '#') //Note: This is inta recursive implementation, pointer i should not be added
     {
         bt = (struct TreeNode *) malloc(sizeof(struct TreeNode));
-        bt->val = e[*i - 1];
+        bt->val = e[*i-1];
         bt->left = createBiTree(e, i);
         bt->right = createBiTree(e, i);
     }
+
+//    if (e[(*i)] != '#') //Note: This is inta recursive implementation, pointer i should not be added
+//    {
+//        (*i)++;
+//        bt = (struct TreeNode *) malloc(sizeof(struct TreeNode));
+//        bt->val = e[*i-1];
+//        bt->left = createBiTree(e, i);
+//        bt->right = createBiTree(e, i);
+//    }else{
+//        (*i)++;
+//        bt = NULL;
+//    }
 
     return bt;
 }
@@ -117,6 +129,14 @@ int *inorderTraversal(struct TreeNode *root, int *returnSize) {
 
 int main() {
     int i = 0;
+
+//    int *p = &i;
+//    printf("%d,%d\n",*p,p);
+//    (*p)++;
+//    printf("%d,%d\n",*p,p);
+//    (*p)++;
+//    printf("%d,%d\n",*p,p);
+
 
     char *cStr = "ABDH##I##E#J##CF#K##G##";
 //    char *cStr = "1#23###";
