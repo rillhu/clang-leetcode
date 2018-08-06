@@ -90,6 +90,7 @@ int popStack(struct stack *stack, struct TreeNode **node) {
  * Note: The returned array must be malloced, assume caller calls free().
  */
 
+//ref: https://blog.csdn.net/qq_24754061/article/details/72780229
 int *inorderTraversal(struct TreeNode *root, int *returnSize) {
     *returnSize = 0;
     int *ret = (int *)malloc(MAXSIZE* sizeof(int));
